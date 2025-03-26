@@ -5,34 +5,19 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.green,
-            margin: EdgeInsets.all(10),
+      appBar: AppBar(
+        title: Text('Flutter Widgets Demo'),),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 200,
+          margin: EdgeInsets.all(8),
+          padding: EdgeInsets.all(8),
+          color: Colors.amber,
+          child: Text('hello world'),
 
-          ),
-
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.black,
-            margin: EdgeInsets.all(10),
-
-          ),
-
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-              margin: EdgeInsets.all(10),
-
-
-          )
-        ],
-      ),
+            ),
+        ),
     );
   }
 }
