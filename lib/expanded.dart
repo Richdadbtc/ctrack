@@ -1,42 +1,47 @@
 import 'package:flutter/material.dart';
 
+
+void main() {
+  runApp(expanded());
+}
+
 class expanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.green,
-      ),
-      Expanded(
-        flex: 6,
-        child: Container(
-          width: 100,
-          height: 100,
-          color: Colors.amber,
-    ),
-
-    ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.black,
-          ),
-          Expanded(
-            flex: 8,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Expanded Widget Example')),
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 100,
+                    color: Colors.red,
+                    child: Center(child: Text('Flex: 2')),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 100,
+                    color: Colors.blue,
+                    child: Center(child: Text('Flex: 1')),
+                  ),
+                ),
+              ],
             ),
-          )
-        ]
-      )
-
+            Expanded(
+              child: Container(
+                color: Colors.green,
+                child: Center(child: Text('Expanded to Fill Remaining Space')),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
-
   }
 }
