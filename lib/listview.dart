@@ -1,24 +1,83 @@
 import 'package:flutter/material.dart';
-
-
-void main() {
-  runApp(listview());
-}
+import 'square.dart';
 
 class listview extends StatelessWidget {
+ final List _posts = [
+   'posts 1',
+   'posts 2',
+   'posts 3',
+   'posts 4',
+ ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('listview Widget Example')),
-      body: ListView(
-        padding: EdgeInsets.all(8),
+      body: Column(
         children: [
-          ListTile(title: Text('Item 1')),
-          ListTile(title: Text('Item 2')),
-          ListTile(title: Text('Item 3')),
+          Expanded(
+              child:ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+          Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.amber,
+                ),
+              ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.amber,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.amber,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.amber,
+              ),
+            ),
+          ),
 
+      Expanded(
+      child: ListView.builder(
+          itemCount: _posts.length,
+          itemBuilder: (context, index) {
+            return square(child: _posts [index],);
+          }
+      ),
+
+      ),
+        ]
+      ),
+    ),
         ]
       ),
     );
-  }
+
+    }
 }
