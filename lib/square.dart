@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
        padding: EdgeInsets.all(8.0),
        child: Container(
          height: 200,
-         color: Colors.amber,
+         color: Colors.purple,
          child: Center(child: Text('Entry A')),
        ),
      );

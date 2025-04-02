@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'MyHomePage.dart';
+import 'cliprect.dart';
 import 'expanded.dart';
 import 'rows.dart';
 import 'listview.dart';
+
 
 
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: listview(),
+      home: Cliprect(),
     );
   }
 }
